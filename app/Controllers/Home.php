@@ -32,7 +32,7 @@ class Home extends BaseController
     private function getInfo($id): Array 
     {
         $first_letter = substr($id, 0, 1);
-        $url = "./data/pdb/$first_letter/$id/info.txt";
+        $url = base_url()."/data/pdb/$first_letter/$id/info.txt";
         $file_handle = fopen($url, 'r');
         $lines = "";
         if ($file_handle) {
