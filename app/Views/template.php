@@ -131,9 +131,10 @@
             // Verificar se a tecla pressionada foi Enter (código 13)
             if (event.keyCode === 13) {
                 event.preventDefault(); // Prevenir o envio do formulário
-                var url = document.getElementById('urlInput').value;
+                let url = document.getElementById('urlInput').value;
+                url = url.toUpperCase();
                 if (url) {
-                    if(url.length != 8){
+                    if(url.length != 4){
                         window.location.href = '<?= base_url("/entry/404") ?>';
                     }
                     window.location.href = '<?= base_url() ?>entry/'+url;
