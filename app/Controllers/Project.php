@@ -11,7 +11,8 @@ class Project extends BaseController
 
 
     public function id($id = 'null'){
-		$id = substr($id, 0, 6);
+		$id = substr($id, 0, 4);
+		$first_letter = substr($id, 0, 1);
 
 		# ********************* Search project *********************
 		# Read directory
@@ -39,7 +40,7 @@ class Project extends BaseController
 			$data_folder = getcwd(); // este código identifica a pasta local
 			$raiz = str_replace("/public/data", "",$data_folder);
 
-			$contacts_file = fopen($data_folder.'/'.$id.'/contacts.csv','r');
+			$contacts_file = fopen($data_folder.'/'.$first_letter.'/'.$id.'/contacts.csv','r');
             $contacts = array();
             $total_results = 0;
             while (($line = fgets($contacts_file, 4096)) !== false) {
@@ -47,11 +48,17 @@ class Project extends BaseController
                 $total_results++;
             }
             fclose($contacts_file);
-            
-            $view = 'project';
 
+			$info_file = fopen($data_folder.'/'.$first_letter.'/'.$id.'/info.txt','r');
+			$info = array();
+            while (($line = fgets($info_file, 4096)) !== false) {
+                array_push($info, $line);
+            }
+            fclose($info_file);
+            
             // Load template
             $data['contacts'] = $contacts;
+			$data['info'] = $info;
             $data['id'] = $id;
             $data['total_results'] = $total_results-3;
 
@@ -59,82 +66,6 @@ class Project extends BaseController
 		}
 	}
 
-
-
-    public function create(){
-
-		# ********************* Create new ID *********************
-		$id = $this->generateRandomString(6);
-		
-		# Read directory
-		chdir('../public/data');
-		$arquivos = glob("{*}", GLOB_BRACE);
-
-		# Is the id unique? If not, create a new!
-		for($i = 0; $i < (count($arquivos)); $i++){
-			if($arquivos[$i] == $id){
-				$id = $this->generateRandomString(6);
-				$i = 0;
-			}
-		}
-
-		# Create project folder 
-		mkdir("../../public/data/$id");
-		mkdir("../../public/data/$id/tmp");
-		chmod("../../public/data/$id", 0777);
-		//chmod("../../public/data/$id/tmp", 0777);
-
-
-		# ********************* Receiving post data *********************
-
-		$pdb = $this->request->getPost("pdb");
-		$data_folder = getcwd();
-		$raiz = str_replace("/public/data", "",$data_folder);
-
-		# Saving project data
-		$project = fopen($data_folder.'/'.$id.'/data.pdb','w');
-		fwrite($project,$pdb); 
-		fclose($project);
-
-		// $config['upload_path'] = "../../public/data/$id";
-        // $config['allowed_types'] = '*';
-        // $config['max_size'] = 2048;
-        // if(!empty($residue)){
-		// 	$config['file_name'] = 'raw.pdb';
-		// }
-		// else{
-		// 	$config['file_name'] = 'origin.pdb';
-		// // }
-
-        // $this->load->library('upload', $config);
-
-        // if (!$this->upload->do_upload('pdb')){
-        // 	$error = array('error' => $this->upload->display_errors());
-        // 	print_r($error);
-        // }
-        // else{
-        // 	$data = array('upload_data' => $this->upload->data());
-        // }
-
-        # Security
-        #chmod("../../public/data/$id", 0644);
-				
-
-		# START cocada PIPELINE *******************************************
-		system("python $raiz/app/ThirdParty/COCaDA/main.py -f $data_folder/$id/data.pdb -o $data_folder/$id");
-		system("/usr/bin/python3.6 $raiz/app/ThirdParty/COCaDA/main.py -f $data_folder/$id/data.pdb -o $data_folder/$id");
-		
-		# renomeia o arquivo com a lista de contatos
-		system("mv $data_folder/$id/*.txt $data_folder/$id/contacts.csv");
-		// dd("python3 $raiz/app/ThirdParty/COCaDA/main.py -f $data_folder/$id/data.pdb -o $data_folder/$id");
-
-		$data = array();
-		$data['id'] = $id;
-		chmod("../../public/data/$id", 0755);
-
-        return view('running', $data);
-
-	}
 
     private function generateRandomString($size){
 

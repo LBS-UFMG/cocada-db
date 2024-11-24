@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="pt-br">
 <head>
-    <title>COCaDA-web</title>
+    <title>COCaDA-DB</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,34 +14,36 @@
 
     <link rel="stylesheet" href="<?php echo base_url('DataTables/datatables.min.css'); ?>">
     <link rel="stylesheet" href="//cdn.datatables.net/2.0.8/css/dataTables.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <link rel="stylesheet" href="<?= base_url('css/estilo.css') ?>">
     
 </head>
 <body>
    
-    <nav class="py-2 bg-body-tertiary border-bottom menu link-light">
+    <nav class="py-2 bg-body-tertiary menu link-light">
         <div class="container d-flex flex-wrap">
         <ul class="nav me-auto">
             <li class="nav-item"><a href="<?= base_url() ?>" class="nav-link link-body-emphasis px-2 active" aria-current="page">Home</a></li>
             <li class="nav-item"><a href="#" data-bs-toggle="modal" data-bs-target="#about" class="nav-link link-body-emphasis px-2">About</a></li>
             <li class="nav-item"><a href="<?= base_url('documentation') ?>" class="nav-link link-body-emphasis px-2">Documentation</a></li>
+            <li class="nav-item"><a href="<?= base_url('explore') ?>" class="nav-link link-body-emphasis px-2">Explore</a></li>
             <!-- <li class="nav-item"><a href="<?= base_url('download') ?>" class="nav-link link-body-emphasis px-2">Download</a></li>
             <li class="nav-item"><a href="<?= base_url('explore') ?>" class="nav-link link-body-emphasis px-2">Explore</a></li> -->
         </ul>
         <ul class="nav">
-            <li class="nav-item"><a href="http://bioinfo.dcc.ufmg.br/coda" 
-            class="nav-link link-body-emphasis px-2">Explore <strong>CODA</strong> (COntacts DAtabase)</a></li>
+            <!-- <li class="nav-item"><a href="http://bioinfo.dcc.ufmg.br/coda"  -->
+            <!-- class="nav-link link-body-emphasis px-2">Explore <strong>CODA</strong> (COntacts DAtabase)</a></li> -->
         </ul>
         </div>
     </nav>
     <header class="py-3 mb-4 border-bottom">
         <div class="container d-flex flex-wrap justify-content-center">
         <a href="<?= base_url() ?>" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto link-body-emphasis text-decoration-none">
-            <img src="<?= base_url('/img/logo.png') ?>" width="360px">
+            <img src="<?= base_url('/img/cocada-white.png') ?>" width="360px">
         </a>
         <form class="col-12 col-lg-auto mb-3 mb-lg-0" role="search">
-            <input type="search" class="form-control form-control-lg mt-2" placeholder="Search on CODA..." aria-label="Search" onkeydown="redirectToURL(event)" id="urlInput">
+            <input type="search" class="form-control form-control-lg mt-2" placeholder="Search..." aria-label="Search" onkeydown="redirectToURL(event)" id="urlInput">
         </form>
         </div>
     </header>
@@ -57,7 +59,7 @@
             <div class="row">
                 <div class="col ps-5">
                     <img src="<?= base_url('/img/cocada-white.png') ?>" width="200px">
-                    <p class="bege small pt-3 col-9">COCαDA (Contact Optimization by alpha-Carbon Distance Analysis) optimizes the calculation of atomic interactions in proteins, by using a set of fine-tuned Cα distances between every pair of aminoacid residues. The code includes a customized parser for both PDB and CIF files.</p>
+                    <p class="text-light small pt-3 col-9">COCαDA (Contact Optimization by alpha-Carbon Distance Analysis) optimizes the calculation of atomic interactions in proteins, by using a set of fine-tuned Cα distances between every pair of aminoacid residues. The code includes a customized parser for both PDB and CIF files.</p>
                 </div>
 
                 <div class="col">

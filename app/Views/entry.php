@@ -9,14 +9,13 @@
 <div style="background-color:#e4e4e4; height:180px; margin: -25px -10px 20px -10px;">
     <div class="container">
         <div class="row">
-            <div class="col-md-9 col-xs-12">
-                <br><br>
-                <h2 class="title_h2">
-                    <div class="dropdown" title="Export files">
-
-                        <div class="dropdown">
-                            <button class="btn btn-lg btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <?php echo $id; ?>
+            <div class="col-md-9 col-xs-12 pt-2">
+                <h2 class="title_h2 pt-4">
+                    <strong><?php echo $id; ?></strong>
+                    <div class="dropdown d-inline ms-2" title="Export files">
+                        <div class="dropdown d-inline">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Download
                             </button>
                             <ul class="dropdown-menu">
                                 <li><b class="ms-3">Download<br></b></li>
@@ -24,10 +23,15 @@
                                 <li><a class="dropdown-item" href="<?php echo base_url(); ?>/data/<?php echo $id; ?>/data.pdb">PDB file</a></li>
                             </ul>
                         </div>
-
                     </div>
                 </h2>
-                <p><strong><a href='<?php echo base_url(); ?>result/id/<?php echo $id; ?>'><?php echo base_url(); ?>project/<?php echo $id; ?></a> </strong></p>
+                <div class="col"><p><strong>Description: </strong><?=$info[1]?></p></div>
+                <div class="row">
+                    <div class="col"><p><strong>Atoms: </strong><?=$info[2]?></p></div>
+                    <div class="col"><p><strong>Residues: </strong><?=$info[3]?></p></div>
+                </div>
+                
+                
             </div>
 
             <div class="col-md-3 col-xs-12" style="height: 180px; background-color: #00bc9e; color:#fff">
@@ -92,7 +96,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($contacts as $contact) { ?>
+                        <?php foreach ($contacts as $contact) {  ?>
                             <?php $m = explode(',', $contact);
                             $len_mut = count($m);
                             if (($len_mut < 5) or ($m[0] == 'Chain1')) {
@@ -326,8 +330,8 @@
         //var title_pdb = $(".title_h2").text();
         //title_pdb = title_pdb.split(": ")
 
-        //var txt = "https://files.rcsb.org/download/"+title_pdb[1]+".pdb";
-        var txt = "<?php echo base_url(); ?>/data/<?php echo $id; ?>/data.pdb";
+        var txt = "https://files.rcsb.org/download/<?php echo $id; ?>.pdb";
+        //var txt = "<?php echo base_url(); ?>/data/<?php echo $id; ?>/data.pdb";
 
         $.post(txt, function(d) {
 

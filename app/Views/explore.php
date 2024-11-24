@@ -10,10 +10,9 @@
             <table id="table_explore" class="table table-striped table-hover" style="width:100%; ">
                 <thead>
                     <tr class="tableheader">
-                        <th class="dt-center">RpID <sup><a class="tip" href="#" data-placement="top" data-toggle="tooltip" title="PDB - RNA chain - PROTEIN chain">?</a></sup></th>
-                        <th class="dt-center">Title <sup><a class="tip" href="#" data-placement="top" data-toggle="tooltip" title="Name">?</a></sup></th>
+                        <th class="dt-center">PDB ID <sup><a class="tip" href="#" data-placement="top" data-toggle="tooltip" title="PDB - ID">?</a></sup></th>
                         <th class="dt-center">Description <sup><a class="tip" href="#" data-placement="top" data-toggle="tooltip" title="Description of the pdb file">?</a></sup></th>
-                        <th>RNA size</th>
+                        <th>Atoms</th>
                         <th>Protein size</th>
                         <th class="dt-center">Contacts <sup><a class="tip" href="#" data-placement="top" data-toggle="tooltip" title="Number of contacts">?</a></sup></th>
                     </tr>
@@ -62,7 +61,7 @@
                 linha = linha.replace("\r", "")
 
                 // separa as células
-                celulas = linha.split("\t")
+                celulas = linha.split(",")
 
                 celulas[0] = `<strong><a href="/entry/${celulas[0]}">${celulas[0]}</a></strong>`;
 
@@ -89,7 +88,7 @@
             })
         }
 
-        lerDados("<?= base_url('data/rnapedia_database.tsv') ?>");
+        lerDados("<?= base_url('data/cocada_database.tsv') ?>");
 
     })
 
