@@ -77,9 +77,9 @@
     <div class="modal fade" tabindex="-1" id="about" role="dialog">
     <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
         <div class="modal-content">
-        <div class="modal-header bg-light">
+        <div class="modal-header bg-success">
             <div class="text-center">
-            <img width="150" class="me-3" src="<?php echo base_url('/img/logo.png'); ?>">
+            <img width="150" class="me-3" src="<?php echo base_url('/img/cocada-white.png'); ?>">
             </div>
             <button type="button" class="btn" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         </div>
@@ -91,7 +91,7 @@
             </p>
             </div>
             <div class="row text-secondary">
-                <div class="col-md-6">
+                <div class="col-md-8">
 
                     <strong># Created by:</strong><br>
                     Rafael Lemos / Diego Mariano / Raquel C. de Melo-Minardi<br><br>
@@ -105,7 +105,7 @@
             <img height="50" class="me-3" src="<?php echo base_url('/img/dcc_b.svg'); ?>">
             <img height="50"  class="me-3" src="<?php echo base_url('/img/ufmg_b.svg'); ?>">
 
-            <button type="button" class="btn btn-primary py-4 px-5" data-bs-dismiss="modal">Fechar</button>
+            <button type="button" class="btn btn-success py-4 px-5" data-bs-dismiss="modal">Fechar</button>
         </div>
         </div>
         <!-- /.modal-content -->

@@ -10,6 +10,10 @@ header{
     color: #fff9eb !important;
 }
 
+.menu a:hover{
+    color: #031430 !important;
+}
+
 footer{
     background-color: #031430 !important;
     padding: 50px 0;
@@ -31,4 +35,5 @@ footer{
 
 .azul:hover{
     background-color: #031430 !important;
+    border-color: #031430 !important;
 }
