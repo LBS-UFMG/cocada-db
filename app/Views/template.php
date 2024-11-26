@@ -42,8 +42,8 @@
         <a href="<?= base_url() ?>" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto link-body-emphasis text-decoration-none">
             <img src="<?= base_url('/img/cocada-white.png') ?>" width="360px">
         </a>
-        <form class="col-12 col-lg-auto mb-3 mb-lg-0" role="search">
-            <input type="search" class="form-control form-control-lg mt-2" placeholder="Search..." aria-label="Search" onkeydown="redirectToURL(event)" id="urlInput">
+        <form class="col-12 col-md-auto mb-3 mb-md-0" role="search">
+            <input type="search" class="form-control form-control-md mt-2" placeholder="Search..." aria-label="Search" onkeydown="redirectToURL(event)" id="urlInput">
         </form>
         </div>
     </header>

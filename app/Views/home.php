@@ -9,10 +9,10 @@
 
 <div class="container col-xxl-10 px-2 py-0">
     <div class="row flex-lg-row-reverse align-items-center g-5 py-4">
-        <div class="col-10 col-sm-8 col-lg-6">
+        <div class="col-10 col-sm-8 col-md-6">
             <img src="<?= base_url('/img/home.png') ?>" class="d-block mx-lg-auto img-fluid" width="450" loading="lazy">
         </div>
-        <div class="col-lg-6">
+        <div class="col-md-6">
             <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">The Interatomic Contact Database</h1>
 
             <p class="lead">COCaDA-DB is the database that presents contacts in all structures available in the PDB database. CDB calculates seven types of contacts: hydrogen bonds, hydrophobic, aromatic, attractive, repulsive, salt bridges and disulfide bridges. </p>
@@ -27,7 +27,7 @@
 <div class="bg-light my-5 py-5">
 <div id="info" class="container">
   <div class="row">
-    <div class="col-xs-12 col-lg-3">
+    <div class="col-xs-12 col-md-3">
       <div class="card p-2" style="border-left: #031430 5px solid; color: #ccc">
         <div class="caption">
           <div class="row">
@@ -46,7 +46,7 @@
         </div>
       </div>
     </div>
-    <div class="col-xs-12 col-lg-3">
+    <div class="col-xs-12 col-md-3">
       <div class="card p-2" style="border-left: #031430 5px solid; color: #ccc">
         <div class="caption">
           <div class="row">
@@ -65,7 +65,7 @@
         </div>
       </div>
     </div>
-    <div class="col-xs-12 col-lg-3">
+    <div class="col-xs-12 col-md-3">
       <div class="card p-2" style="border-left: #031430 5px solid; color: #ccc">
         <div class="caption">
           <div class="row">
@@ -83,7 +83,7 @@
         </div>
       </div>
     </div>
-    <div class="col-xs-12 col-lg-3">
+    <div class="col-xs-12 col-md-3">
       <div class="card p-2" style="border-left: #031430 5px solid; color: #ccc">
         <div class="caption">
           <div class="row">
