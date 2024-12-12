@@ -19,16 +19,16 @@
                             </button>
                             <ul class="dropdown-menu">
                                 <li><b class="ms-3">Download<br></b></li>
-                                <li><a class="dropdown-item mt-2" href="<?php echo base_url(); ?>/data/<?php echo $id; ?>/contacts.csv">Contacts</a></li>
-                                <li><a class="dropdown-item" href="<?php echo base_url(); ?>/data/<?php echo $id; ?>/data.pdb">PDB file</a></li>
+                                <li><a class="dropdown-item mt-2" href="<?php echo base_url(); ?>data/pdb/<?=substr($id,0,1)?>/<?=$id?>/<?=$id?>_contacts.csv">Contacts</a></li>
+                                <li><a class="dropdown-item" href="https://files.rcsb.org/view/<?php echo $id; ?>.cif">PDB file</a></li>
                             </ul>
                         </div>
                     </div>
                 </h2>
                 <div class="col"><p><strong>Description: </strong><?=$info[1]?></p></div>
                 <div class="row">
-                    <div class="col"><p><strong>Atoms: </strong><?=$info[2]?></p></div>
-                    <div class="col"><p><strong>Residues: </strong><?=$info[3]?></p></div>
+                    <div class="col"><p><strong>Residues: </strong><?=$info[2]?></p></div>
+                    <!-- <div class="col"><p><strong>Residues: </strong><?=$info[3]?></p></div> -->
                 </div>
                 
                 
