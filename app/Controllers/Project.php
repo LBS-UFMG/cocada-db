@@ -49,7 +49,7 @@ class Project extends BaseController
             }
             fclose($contacts_file);
 
-			$info_file = fopen($data_folder.'/'.$first_letter.'/'.$id.'/'.$id.'_info.txt','r');
+			$info_file = fopen($data_folder.'/'.$first_letter.'/'.$id.'/'.$id.'_info.csv','r');
 			$info = array();
             while (($line = fgets($info_file, 4096)) !== false) {
                 array_push($info, $line);
