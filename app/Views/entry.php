@@ -125,7 +125,7 @@
                                     if ($m[0] == $m[4]) {
                                         echo "<span class='badge text-bg-dark'>INTRA</hb>";
                                     } else {
-                                        echo "<span class='badge text-bg-light'>PPI</hb>";
+                                        echo "<span class='badge text-bg-light'>INTER</hb>";
                                     }
                                     ?>
                                 </td>
