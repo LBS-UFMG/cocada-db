@@ -59,7 +59,7 @@
                   732,521,883
                 </strong>
               </h2>
-              <p class="text-muted small"><strong>CONTACTS INTRA</strong></p>
+              <p class="text-muted small"><strong>INTRA-CHAIN CONTACTS</strong></p>
             </div>
           </div>
         </div>
@@ -77,7 +77,7 @@
                 67,569,936
                 </strong>
               </h2>
-              <p class="text-muted small"><strong>INTER-CHAIN</strong></p>
+              <p class="text-muted small"><strong>INTER-CHAIN CONTACTS</strong></p>
             </div>
           </div>
         </div>
