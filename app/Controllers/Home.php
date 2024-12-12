@@ -44,7 +44,7 @@ class Home extends BaseController
             echo "Não foi possível abrir o arquivo.";
         }
         
-        $info = explode("\n", $lines);
+        $info = explode(",", $lines);
         return $info;
     }
 
