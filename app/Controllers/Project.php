@@ -40,7 +40,7 @@ class Project extends BaseController
 			$data_folder = getcwd(); // este código identifica a pasta local
 			$raiz = str_replace("/public/data", "",$data_folder);
 
-			$contacts_file = fopen($data_folder.'/'.$first_letter.'/'.$id.'/contacts.csv','r');
+			$contacts_file = fopen($data_folder.'/'.$first_letter.'/'.$id.'/'.$id.'_contacts.csv','r');
             $contacts = array();
             $total_results = 0;
             while (($line = fgets($contacts_file, 4096)) !== false) {
@@ -49,7 +49,7 @@ class Project extends BaseController
             }
             fclose($contacts_file);
 
-			$info_file = fopen($data_folder.'/'.$first_letter.'/'.$id.'/info.txt','r');
+			$info_file = fopen($data_folder.'/'.$first_letter.'/'.$id.'/'.$id.'_info.txt','r');
 			$info = array();
             while (($line = fgets($info_file, 4096)) !== false) {
                 array_push($info, $line);

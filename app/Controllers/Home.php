@@ -32,7 +32,7 @@ class Home extends BaseController
     private function getInfo($id): Array 
     {
         $first_letter = substr($id, 0, 1);
-        $url = base_url()."/data/pdb/$first_letter/$id/info.txt";
+        $url = base_url()."/data/pdb/$first_letter/$id/$id"."_info.txt";
         $file_handle = fopen($url, 'r');
         $lines = "";
         if ($file_handle) {
@@ -55,7 +55,7 @@ class Home extends BaseController
         $first_letter = substr($id, 0, 1);
 
         # contacts
-        $url = "./data/pdb/$first_letter/$id/contacts.csv";
+        $url = "./data/pdb/$first_letter/$id/$id"."_contacts.csv";
         $file_handle = fopen($url, 'r');
         if ($file_handle) {
             while (($line = fgets($file_handle)) !== false) {

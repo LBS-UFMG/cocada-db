@@ -11,8 +11,8 @@
                 <thead>
                     <tr class="tableheader">
                         <th class="dt-center">PDB ID <sup><a class="tip" href="#" data-placement="top" data-toggle="tooltip" title="PDB - ID">?</a></sup></th>
-                        <th class="dt-center">Description <sup><a class="tip" href="#" data-placement="top" data-toggle="tooltip" title="Description of the pdb file">?</a></sup></th>
-                        <th>Atoms</th>
+                        <!-- <th class="dt-center">Description <sup><a class="tip" href="#" data-placement="top" data-toggle="tooltip" title="Description of the pdb file">?</a></sup></th>
+                        <th>Atoms</th> -->
                         <th>Protein size</th>
                         <th class="dt-center">Contacts <sup><a class="tip" href="#" data-placement="top" data-toggle="tooltip" title="Number of contacts">?</a></sup></th>
                     </tr>
@@ -88,7 +88,7 @@
             })
         }
 
-        lerDados("<?= base_url('data/cocada_database.tsv') ?>");
+        lerDados("<?= base_url('data/list2.csv') ?>");
 
     })
 
