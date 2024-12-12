@@ -192,7 +192,7 @@
 <script>
     $(document).ready(function() {
         var table = $('#mut').DataTable({
-            "paging": false
+            "paging": true
         });
         $('#at').click(function() {
             table.columns(9).search("AT", true, false).draw();
