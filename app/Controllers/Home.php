@@ -81,8 +81,8 @@ class Home extends BaseController
 
         // pega informações básicas
         $data['info'] = $this->getInfo($id);
-        $data['total_results'] = str_replace("contacts:","",$data['info'][4]);
-
+        //$data['total_results'] = str_replace("contacts:","",$data['info'][4]);
+        $data['total_results'] = $data['info'][3];
         // pega informações de contatos
         $data['contacts'] = $this->getContacts($id);
 
