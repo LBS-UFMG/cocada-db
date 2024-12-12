@@ -35,11 +35,11 @@
                 <i class="bi bi-braces-asterisk"></i>
             </div>
             <div class="col-md-9 text-end">
-              <h1 class="mt-3">
+              <h2 class="mt-3">
                 <strong class="texto-azul">
                   800,091,819
                 </strong>
-              </h1>
+              </h2>
               <p class="text-muted small"><strong>CONTACTS</strong></p>
             </div>
           </div>
