@@ -54,11 +54,11 @@
                 <i class="bi bi-info-circle-fill"></i>
             </div>
             <div class="col-md-9 text-end">
-              <h1 class="mt-3">
+              <h2 class="mt-3">
                 <strong class="texto-azul">
-                  ???
+                  732,521,883
                 </strong>
-              </h1>
+              </h2>
               <p class="text-muted small"><strong>CONTACTS INTRA</strong></p>
             </div>
           </div>
@@ -73,11 +73,11 @@
                 <i class="bi bi-exclude"></i>
             </div>
             <div class="col-md-9 text-end">
-              <h1 class="mt-3"><strong class="texto-azul">
-                  ???
+              <h2 class="mt-3"><strong class="texto-azul">
+                67,569,936
                 </strong>
-              </h1>
-              <p class="text-muted small"><strong>PPI CONTACTS</strong></p>
+              </h2>
+              <p class="text-muted small"><strong>INTER-CHAIN</strong></p>
             </div>
           </div>
         </div>
@@ -91,11 +91,11 @@
                 <i class="bi bi-hurricane"></i>
             </div>
             <div class="col-md-9 text-end">
-              <h1 class="mt-3">
+              <h2 class="mt-3">
                 <strong class="texto-azul">
                   223,818
                 </strong>
-              </h1>
+              </h2>
               <p class="text-muted small"><strong>3D STRUCTURES</strong></p>
             </div>
           </div>
