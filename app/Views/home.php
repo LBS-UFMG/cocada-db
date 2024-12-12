@@ -56,7 +56,7 @@
             <div class="col-md-9 text-end">
               <h1 class="mt-3">
                 <strong class="texto-azul">
-                  500.000
+                  ???
                 </strong>
               </h1>
               <p class="text-muted small"><strong>CONTACTS INTRA</strong></p>
@@ -74,7 +74,7 @@
             </div>
             <div class="col-md-9 text-end">
               <h1 class="mt-3"><strong class="texto-azul">
-                  200.000
+                  ???
                 </strong>
               </h1>
               <p class="text-muted small"><strong>PPI CONTACTS</strong></p>
