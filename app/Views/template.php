@@ -57,12 +57,12 @@
     <footer>
         <div class="container-fluid">
             <div class="row">
-                <div class="col ps-5">
+                <div class="col-12 col-md-6 ps-5">
                     <img src="<?= base_url('/img/cocada-white.png') ?>" width="200px">
                     <p class="text-light small pt-3 col-9">COCαDA (Contact Optimization by alpha-Carbon Distance Analysis) optimizes the calculation of atomic interactions in proteins, by using a set of fine-tuned Cα distances between every pair of aminoacid residues. The code includes a customized parser for both PDB and CIF files.</p>
                 </div>
 
-                <div class="col">
+                <div class="col-12 col-md-6">
                     <div class="row pt-5">
                         <div class="col"><img src="<?= base_url('/img/lbs.svg') ?>" width="220px"></div>
                         <div class="col"><img src="<?= base_url('/img/dcc_w.svg') ?>" width="170px"></div>
