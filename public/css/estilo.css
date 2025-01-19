@@ -37,3 +37,16 @@ footer{
     background-color: #031430 !important;
     border-color: #031430 !important;
 }
+
+#loading{
+    position: absolute;
+    background-color: #031430fd;
+    width: 100%;
+    height: 100vh;
+    top: 150px;
+    left:0;
+    text-align: center;
+    padding-top:40px;
+    z-index: 99999;
+    color: white;
+}

@@ -32,16 +32,21 @@ class Home extends BaseController
     private function getInfo($id): Array 
     {
         $first_letter = substr($id, 0, 1);
-        $url = base_url()."/data/pdb/$first_letter/$id/$id"."_info.csv";
+        $url = "./data/pdb/$first_letter/$id/$id"."_info.csv";
+
+        if (!file_exists($url)) {
+            return ["File not exist."];
+        }
+
         $file_handle = fopen($url, 'r');
         $lines = "";
-        if ($file_handle) {
+        if($file_handle) {
             while (($line = fgets($file_handle)) !== false) {
                 $lines = $lines.$line;
             }
             fclose($file_handle);
         } else {
-            echo "Não foi possível abrir o arquivo.";
+            echo "Error.";
         }
         
         $info = explode(",", $lines);
@@ -56,6 +61,9 @@ class Home extends BaseController
 
         # contacts
         $url = "./data/pdb/$first_letter/$id/$id"."_contacts.csv";
+        if (!file_exists($url)) {
+            return ["File not exist."];
+        }
         $file_handle = fopen($url, 'r');
         if ($file_handle) {
             while (($line = fgets($file_handle)) !== false) {
@@ -63,7 +71,7 @@ class Home extends BaseController
             }
             fclose($file_handle);
         } else {
-            echo "Não foi possível abrir o arquivo.";
+            echo "Error.";
         }
         
         return $contacts;
@@ -81,7 +89,9 @@ class Home extends BaseController
 
         // pega informações básicas
         $data['info'] = $this->getInfo($id);
-        //$data['total_results'] = str_replace("contacts:","",$data['info'][4]);
+        if($data['info'][0] == "File not exist."){
+            return view('404', $data);
+        }
         $data['total_results'] = $data['info'][3];
         // pega informações de contatos
         $data['contacts'] = $this->getContacts($id);

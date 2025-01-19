@@ -12,4 +12,4 @@ $routes->get('/explore', 'Home::explore');
 $routes->get('/blast', 'Home::blast');
 $routes->get('/entry/(:any)', 'Home::entry/$1');
 $routes->post('/run', 'Project::create');
-// $routes->get('/project/(:any)', 'Project::id/$1');
+$routes->get('/project/(:any)', 'Project::id/$1');
