@@ -129,7 +129,7 @@ class Project extends BaseController
 				
 		echo "<div class='bg-info small text-center'><div class='container-fluid px-5'><strong>COCaDA CLI status: </strong>"; // message style box
 		# START cocada PIPELINE *******************************************
-		system("python $raiz/app/ThirdParty/COCaDA/main.py -f $data_folder/$id/data.pdb -o $data_folder/$id");
+		print("python $raiz/app/ThirdParty/COCaDA/main.py -f $data_folder/$id/data.pdb -o $data_folder/$id");
 		system("/usr/bin/python3.6 $raiz/app/ThirdParty/COCaDA/main.py -f $data_folder/$id/data.pdb -o $data_folder/$id");
 		
 		# renomeia o arquivo com a lista de contatos
