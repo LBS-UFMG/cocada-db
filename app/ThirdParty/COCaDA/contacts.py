@@ -5,13 +5,17 @@ Date: 12/08/2024
 License: MIT License
 """
 
-from math import dist
 from numpy import dot, arccos, degrees
 from numpy.linalg import norm
 
 from classes import Contact
 from distances import distances
 import conditions
+
+def dist(a1, a2):
+    x1, y1, z1 = a1
+    x2, y2, z2 = a2
+    return ((x1-x2)**2 + (y1-y2)**2 + (z1-z2)**2)**(1/2)
 
 
 def contact_detection(protein):
@@ -109,35 +113,11 @@ def show_contacts(contacts):
     
     output = []
     
-    output.append("Chain1,Res1,ResName1,Atom1,Chain2,Res2,ResName2,Atom2,Distance,Type")
+    output.append("\nChain1,Res1,ResName1,Atom1,Chain2,Res2,ResName2,Atom2,Distance,Type")
     for entry in contacts:
         output.append(entry.print_text())
         
     return "\n".join(output) # returns as a string to be written directly into the file
-
-
-def count_contacts(contacts):
-    """
-    Formats and returns the number of contacts for each type. Only works with the -o flag.
-
-    Args:
-        contacts (list): A list of Contact objects of a given protein.
-
-    Returns:
-        list: A list of the number of contacts for each type.
-    """
-    
-    category_counts = {}
-    for contact in contacts:
-        category = contact.type
-        if category in ['stacking-other', 'stacking-parallel', 'stacking-perpendicular']:
-            category = 'aromatic'
-        category_counts[category] = category_counts.get(category, 0) + 1
-        
-    expected_keys = ['hydrogen_bond', 'attractive', 'repulsive', 'hydrophobic', 'aromatic', 'salt_bridge', 'disulfide_bond']
-    values = [category_counts.get(key, 0) for key in expected_keys]
-
-    return values
 
 
 def calc_angle(vector1, vector2):

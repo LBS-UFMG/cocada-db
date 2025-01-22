@@ -39,6 +39,10 @@ class Project extends BaseController
 			$data_folder = getcwd(); // este código identifica a pasta local
 			$raiz = str_replace("/public/data/projects", "",$data_folder);
 
+			if (!file_exists($data_folder.'/'.$id.'/contacts.csv')) {
+				dd("Failed to run the project. Please try again by submitting a file in PDB format or contact the system administrator.");
+			}
+
 			$contacts_file = fopen($data_folder.'/'.$id.'/contacts.csv','r');
             $contacts = array();
             $total_results = 0;

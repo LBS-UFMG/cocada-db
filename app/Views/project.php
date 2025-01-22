@@ -228,7 +228,7 @@
             table.columns(9).search("RE", true, false).draw();
         });
         $('#ar').click(function() {
-            table.columns(9).search("AS", true, false).draw();
+            table.columns(9).search("AS|SPA|SPE|SOT", true, false).draw();
         });
         $('#hy').click(function() {
             table.columns(9).search("HY", true, false).draw();
