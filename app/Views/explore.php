@@ -1,6 +1,15 @@
 <?= $this->extend('template') ?>
 <?= $this->section('conteudo') ?>
 <!-- Conteúdo personalizado -->
+
+<div id="loading">
+    <div class="text-center">
+        <img src="<?=base_url('/img/cocadito-loading.png')?>" width="200px"><br>
+        <div class="spinner-border spinner-border-sm" role="status"></div>
+        <strong class="ms-2">Loading...</strong>
+    </div>
+</div>
+
 <div class="container-fluid py-5 px-5">
 
     <h1 class="pb-5 text-dark">Explore</h1>
@@ -12,10 +21,9 @@
                     <tr class="tableheader">
                         <th class="dt-center">PDB ID <sup><a class="badge bg-dark" href="#" data-bs-placement="top" data-bs-toggle="tooltip" data-bs-title="PDB - ID">?</a></sup></th>
                         
-                        <!-- <th>Atoms</th> --> 
+                        <th class="dt-center">Description <sup><a class="badge bg-dark" href="#" data-bs-placement="top" data-bs-toggle="tooltip" data-bs-title="Description of the pdb file">?</a></sup></th>
                         <th>Protein size</th>
                         <th class="dt-center">Contacts <sup><a class="badge bg-dark" href="#" data-bs-placement="top" data-bs-toggle="tooltip" data-bs-title="Number of contacts calculated by COCaDA">?</a></sup></th>
-                        <th class="dt-center">Description <sup><a class="badge bg-dark" href="#" data-bs-placement="top" data-bs-toggle="tooltip" data-bs-title="Description of the pdb file">?</a></sup></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -90,7 +98,7 @@
             })
         }
 
-        lerDados("<?= base_url('data/list2.csv') ?>");
+        lerDados("<?= base_url('data/list.csv') ?>");
 
     })
 
@@ -101,6 +109,8 @@
 <?= $this->section('scripts') ?>
 
 <script>
+        $(()=>setTimeout(() => $('#loading').fadeOut(), 1000));
+
 // tooltips
     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
     const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));

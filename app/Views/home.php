@@ -41,7 +41,7 @@
               <div class="col-md-9 text-end">
                 <h3 class="mt-4">
                   <strong class="texto-azul">
-                    800,091,819
+                    733,012,478
                   </strong>
                 </h3>
                 <p class="text-muted small"><strong>CONTACTS</strong></p>
@@ -60,7 +60,7 @@
               <div class="col-md-9 text-end">
                 <h3 class="mt-4">
                   <strong class="texto-azul">
-                    732,521,883
+                    673,527,550
                   </strong>
                 </h3>
                 <p class="text-muted small"><strong>INTRA-CHAIN CONTACTS</strong></p>
@@ -78,7 +78,7 @@
               </div>
               <div class="col-md-9 text-end">
                 <h3 class="mt-4"><strong class="texto-azul">
-                    67,569,936
+                  59,484,928
                   </strong>
                 </h3>
                 <p class="text-muted small"><strong>INTER-CHAIN CONTACTS</strong></p>
@@ -97,7 +97,7 @@
               <div class="col-md-9 text-end">
                 <h3 class="mt-4">
                   <strong class="texto-azul">
-                    223,818
+                    223,505
                   </strong>
                 </h3>
                 <p class="text-muted small"><strong>3D STRUCTURES</strong></p>

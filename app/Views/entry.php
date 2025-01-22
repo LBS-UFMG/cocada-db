@@ -35,15 +35,16 @@
                 <div class="row">
                     <div class="col">
                         <p>
-                            <?php $hb=0; $at=0; $re=0; $hy=0; $ar=0; $sb=0; ?>
+                            <?php $hb=0; $at=0; $re=0; $hy=0; $ar=0; $sb=0; $db=0; ?>
                             <strong>Residues: </strong><?=$info[2]?>
-                            <span class="mx-2"> | </span><strong>HB: </strong><span id="hb"></span>
-                            <span class="mx-2"> | </span><strong>AT: </strong><span id="at"></span>
-                            <span class="mx-2"> | </span><strong>RE: </strong><span id="re"></span>
-                            <span class="mx-2"> | </span><strong>HY: </strong><span id="hy"></span>
-                            <span class="mx-2"> | </span><strong>AR: </strong><span id="ar"></span>
-                            <span class="mx-2"> | </span><strong>SB: </strong><span id="sb"></span>
-                            <sup class="ms-2"><label class="badge bg-dark rounded" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="HB: Hydrogen Bonds | AT: Attractive  | RE: Repulsive | HY: Hydrophobic | AR: Aromatic stacking | SB: Salt Bridge">?</label></sup>
+                            <span class="mx-2"> | </span><strong>HB: </strong><span id="hbc"></span>
+                            <span class="mx-2"> | </span><strong>AT: </strong><span id="atc"></span>
+                            <span class="mx-2"> | </span><strong>RE: </strong><span id="rec"></span>
+                            <span class="mx-2"> | </span><strong>HY: </strong><span id="hyc"></span>
+                            <span class="mx-2"> | </span><strong>AS: </strong><span id="arc"></span>
+                            <span class="mx-2"> | </span><strong>SB: </strong><span id="sbc"></span>
+                            <span class="mx-2"> | </span><strong>DB: </strong><span id="dbc"></span>
+                            <sup class="ms-2"><label class="badge bg-dark rounded" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="HB: Hydrogen Bonds | AT: Attractive  | RE: Repulsive | HY: Hydrophobic | AS: Aromatic Stacking | SB: Salt Bridge | DB: Disulfide Bond">?</label></sup>
                         </p>
                     </div>
                 </div>
@@ -91,6 +92,9 @@
                 </div>
                 <div class="btn-group" role="group">
                     <button type="button" id="sb" class="btn btn-primary">Salt Bridge</button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" id="db" class="btn btn-light border">Disulfide</button>
                 </div>
             </div>
             <br>
@@ -165,6 +169,9 @@
                                         case "SB":
                                             echo "<span class='badge text-bg-primary'>SB</hb>";$sb++;
                                             break;
+                                        case "DB":
+                                            echo "<span class='badge text-bg-dark text-white'>DB</hb>";$db++;
+                                            break;
                                         default:
                                             echo "<span class='badge text-bg-light'>$m[9]</hb>";$ar++;
                                             break;
@@ -211,13 +218,15 @@
     $(()=>setTimeout(() => $('#loading').fadeOut(), 1000));
 
     $(()=>{
-        $("#hb").text(<?=$hb?>);
-        $("#at").text(<?=$at?>);
-        $("#re").text(<?=$re?>);
-        $("#hy").text(<?=$hy?>);
-        $("#ar").text(<?=$ar?>);
-        $("#sb").text(<?=$sb?>);
+        $("#hbc").text(<?=$hb?>);
+        $("#atc").text(<?=$at?>);
+        $("#rec").text(<?=$re?>);
+        $("#hyc").text(<?=$hy?>);
+        $("#arc").text(<?=$ar?>);
+        $("#sbc").text(<?=$sb?>);
+        $("#dbc").text(<?=$db?>);
     });
+
     $(document).ready(function() {
         var table = $('#mut').DataTable({
             "paging": true
@@ -232,13 +241,16 @@
             table.columns(9).search("RE", true, false).draw();
         });
         $('#ar').click(function() {
-            table.columns(9).search("SPE|SPA|SOT", true, false).draw();
+            table.columns(9).search("AS", true, false).draw();
         });
         $('#hy').click(function() {
             table.columns(9).search("HY", true, false).draw();
         });
         $('#sb').click(function() {
             table.columns(9).search("SB", true, false).draw();
+        });
+        $('#db').click(function() {
+            table.columns(9).search("DB", true, false).draw();
         });
         $('#show_all').click(function() {
             table.columns(9).search(".*", true, false).draw();
