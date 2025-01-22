@@ -43,8 +43,8 @@
                             <span class="mx-2"> | </span><strong>HY: </strong><span id="hyc"></span>
                             <span class="mx-2"> | </span><strong>AS: </strong><span id="arc"></span>
                             <span class="mx-2"> | </span><strong>SB: </strong><span id="sbc"></span>
-                            <span class="mx-2"> | </span><strong>DB: </strong><span id="dbc"></span>
-                            <sup class="ms-2"><label class="badge bg-dark rounded" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="HB: Hydrogen Bonds | AT: Attractive  | RE: Repulsive | HY: Hydrophobic | AS: Aromatic Stacking | SB: Salt Bridge | DB: Disulfide Bond">?</label></sup>
+                            <span class="mx-2"> | </span><strong>DS: </strong><span id="dbc"></span>
+                            <sup class="ms-2"><label class="badge bg-dark rounded" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="HB: Hydrogen Bonds | AT: Attractive  | RE: Repulsive | HY: Hydrophobic | AS: Aromatic Stacking | SB: Salt Bridge | DS: Disulfide Bond">?</label></sup>
                         </p>
                     </div>
                 </div>
@@ -250,7 +250,7 @@
             table.columns(9).search("SB", true, false).draw();
         });
         $('#db').click(function() {
-            table.columns(9).search("DB", true, false).draw();
+            table.columns(9).search("DS", true, false).draw();
         });
         $('#show_all').click(function() {
             table.columns(9).search(".*", true, false).draw();
