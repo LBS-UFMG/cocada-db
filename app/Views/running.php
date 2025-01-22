@@ -22,7 +22,7 @@
 
 <script>
     // Função para o redirecionamento
-    function redirecionarA() {
+    function redirecionar() {
         window.location.href = "<?=base_url('/project/'.$id)?>";
     }
 
